@@ -1,6 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function AddUser() {
+
+    const [user, setUser] = useState({
+        name:'',
+        username:'',
+        email:''
+    });
+
+    const {name, username, email}=user;
+
+    const onInputChange=(e)=> {
+        setUser({...user, [e.target.name]: e.target.value})
+    }
+
   return (
     <div className='container'>
         <div className='row'>
@@ -13,6 +26,8 @@ function AddUser() {
                         className='form-control'
                         placeholder='Enter your name'
                         name='name'
+                        value={name}
+                        onChange={(e)=>onInputChange(e)}
                     />
                 </div>
                 <div className='mb-3'>
@@ -22,6 +37,8 @@ function AddUser() {
                         className='form-control'
                         placeholder='Enter your name'
                         name='username'
+                        value={username}
+                        onChange={(e)=>onInputChange(e)}
                     />
                 </div>
                 <div className='mb-3'>
@@ -31,6 +48,8 @@ function AddUser() {
                         className='form-control'
                         placeholder='Enter your name'
                         name='email'
+                        value={email}
+                        onChange={(e)=>onInputChange(e)}
                     />
                 </div>
                 <button type='submit' className='btn btn-outline-primary'>Submit</button>
