@@ -20,7 +20,7 @@ function AddUser() {
 
     const onSubmit= async(e) => {
         e.preventDefault();
-        await axios.post('http://localhost:8080/user', user);
+        await axios.post('https://springbootfullstack-backend.herokuapp.com/user', user);
         navigate('/');
     };
 

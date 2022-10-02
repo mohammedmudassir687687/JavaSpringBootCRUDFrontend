@@ -13,12 +13,12 @@ export default function Home() {
     }, []);
 
     const loadUsers = async() => {
-        const result = await axios.get("http://localhost:8080/users");
+        const result = await axios.get("https://springbootfullstack-backend.herokuapp.com/users");
         setUsers(result.data);
     }
 
     const deleteUser = async(id) => {
-        await axios.delete(`http://localhost:8080/user/${id}`);
+        await axios.delete(`https://springbootfullstack-backend.herokuapp.com/user/${id}`);
         loadUsers();
     }
 

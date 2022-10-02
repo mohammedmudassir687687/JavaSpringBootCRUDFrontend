@@ -26,12 +26,12 @@ function EditUser() {
 
     const onSubmit= async(e) => {
         e.preventDefault();
-        await axios.put(`http://localhost:8080/user/${id}`, user);
+        await axios.put(`https://springbootfullstack-backend.herokuapp.com/user/${id}`, user);
         navigate('/');
     };
 
     const loadUser = async() => {
-        const result = await axios.get(`http://localhost:8080/user/${id}`);
+        const result = await axios.get(`https://springbootfullstack-backend.herokuapp.com/user/${id}`);
         setUser(result.data);
     }
 
